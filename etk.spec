@@ -24,7 +24,7 @@ URL: 		http://get-e.org/
 Source: 	%{name}-%{cvsrel}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 #BuildRequires:	ncurses-devel gtk-devel zlib-devel
-BuildRequires:	multiarch-utils, ecore-devel >= 0.9.9
+BuildRequires:	multiarch-utils, ecore-devel >= 0.9.9.038, gettext-devel
 
 %description
 Etk is a toolkit based on the EFL libraries.
