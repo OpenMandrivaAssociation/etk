@@ -1,12 +1,12 @@
 %define	name	etk
 %define	version 0.1.0.003
-%define mrelease %mkrel 2
+%define release %mkrel 2
 
 %define major   1
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} %major -d
 
-%define release 0.%{cvsrel}.%{mrelease}
+#%define release 0.%{cvsrel}.%{mrelease}
 
 %define cvsrel 20070516
 
