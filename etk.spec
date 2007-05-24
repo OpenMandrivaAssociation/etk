@@ -1,6 +1,6 @@
 %define	name	etk
 %define	version 0.1.0.003
-%define mrelease %mkrel 1
+%define mrelease %mkrel 2
 
 %define major   1
 %define libname %mklibname %{name} %major
