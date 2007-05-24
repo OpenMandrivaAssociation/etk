@@ -6,9 +6,6 @@
 %define libname %mklibname %{name} %major
 %define libnamedev %mklibname %{name} %major -d
 
-#%define release 0.%{cvsrel}.%{mrelease}
-
-%define cvsrel 20070516
 
 %define major 	1
 %define libname %mklibname %{name} %major
