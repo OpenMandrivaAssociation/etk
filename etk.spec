@@ -59,6 +59,7 @@ Provides: %name-devel = %{version}-%{release}
 rm -rf $RPM_BUILD_ROOT
 %makeinstall
 %find_lang %name
+cp -v $RPM_BUILD_DIR/%name-%version/%name-config %buildroot/%_bindir/
 %multiarch_binaries %buildroot/%_bindir/%name-config
 
 %post -n %libname -p /sbin/ldconfig
