@@ -1,6 +1,6 @@
 %define	name	etk
 %define	version 0.1.0.003
-%define release %mkrel 6
+%define release %mkrel 7
 
 %define major   1
 %define libname %mklibname %{name} %major
@@ -51,6 +51,7 @@ Provides: %name-devel = %{version}-%{release}
 %setup -q
 
 %build
+sed -i -e '/autopoint/d' autogen.sh
 ./autogen.sh
 %configure2_5x
 %make
