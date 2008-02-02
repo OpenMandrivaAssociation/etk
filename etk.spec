@@ -1,15 +1,10 @@
 %define	name	etk
-%define version 0.1.0.007
+%define version 0.1.0.042
 %define release %mkrel 1
 
 %define major   1
 %define libname %mklibname %{name} %major
-%define libnamedev %mklibname %{name} %major -d
-
-
-%define major 	1
-%define libname %mklibname %{name} %major
-%define libnamedev %mklibname %{name} %major -d
+%define libnamedev %mklibname %{name} -d
 
 Summary: 	Enlightenment toolkit
 Name: 		%{name}
@@ -17,12 +12,11 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
-URL: 		http://get-e.org/
+URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-#BuildRequires:	ncurses-devel gtk-devel zlib-devel
-BuildRequires:	multiarch-utils, ecore-devel >= 0.9.9.038, gettext-devel, cvs
-BuildRequires: edje-devel >= 0.5.0.038, edje
+BuildRequires:	ecore-devel
+BuildRequires:	edje-devel edje
 
 %description
 Etk is a toolkit based on the EFL libraries.
@@ -41,6 +35,7 @@ Libraries for %{name}
 Summary: Headers and development libraries from %{name}
 Group: Development/Other
 Requires: %libname = %{version}
+Requires: lib%{name} = %{version}
 Provides: lib%{name}-devel = %{version}-%{release}
 Provides: %name-devel = %{version}-%{release}
 
@@ -51,8 +46,6 @@ Provides: %name-devel = %{version}-%{release}
 %setup -q
 
 %build
-sed -i -e '/autopoint/d' autogen.sh
-./autogen.sh
 %configure2_5x
 %make
 
@@ -60,8 +53,6 @@ sed -i -e '/autopoint/d' autogen.sh
 rm -rf $RPM_BUILD_ROOT
 %makeinstall
 %find_lang %name
-cp -v $RPM_BUILD_DIR/%name-%version/%name-config %buildroot/%_bindir/
-%multiarch_binaries %buildroot/%_bindir/%name-config
 
 %post -n %libname -p /sbin/ldconfig
 %postun -n %libname -p /sbin/ldconfig
@@ -90,5 +81,3 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/etk/engines/*.a
 %{_libdir}/etk/engines/*.la
 %{_includedir}/*
-%multiarch %{multiarch_bindir}/etk-config
-%{_bindir}/etk-config
