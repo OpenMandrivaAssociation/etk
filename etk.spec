@@ -1,6 +1,6 @@
 %define	name	etk
 %define version 0.1.0.042
-%define release %mkrel 1
+%define release %mkrel 2
 
 %define major   1
 %define libname %mklibname %{name} %major
@@ -35,7 +35,6 @@ Libraries for %{name}
 Summary: Headers and development libraries from %{name}
 Group: Development/Other
 Requires: %libname = %{version}
-Requires: lib%{name} = %{version}
 Provides: lib%{name}-devel = %{version}-%{release}
 Provides: %name-devel = %{version}-%{release}
 
