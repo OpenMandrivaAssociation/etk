@@ -1,6 +1,6 @@
 %define	name	etk
 %define version 0.1.0.042
-%define release %mkrel 2
+%define release %mkrel 3
 
 %define major   1
 %define libname %mklibname %{name} %major
@@ -15,8 +15,8 @@ Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	ecore-devel
-BuildRequires:	edje-devel edje
+BuildRequires:	ecore-devel >= 0.9.9.042
+BuildRequires:	edje-devel >= 0.5.0.042, edje => 0.5.0.042
 
 %description
 Etk is a toolkit based on the EFL libraries.
