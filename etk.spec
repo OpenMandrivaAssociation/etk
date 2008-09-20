@@ -14,8 +14,10 @@ License: 	BSD
 Group: 		Graphical desktop/Enlightenment
 URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
+Patch0:		etk-0.1.0.042-fix-linkage.patch
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ecore-devel >= 0.9.9.042
+Buildrequires:	eet-devel
 BuildRequires:	edje-devel >= 0.5.0.042, edje => 0.5.0.042
 
 %description
@@ -43,6 +45,7 @@ Provides: %name-devel = %{version}-%{release}
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %configure2_5x
@@ -50,7 +53,7 @@ Provides: %name-devel = %{version}-%{release}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%makeinstall
+%makeinstall_std
 %find_lang %name
 
 %if %mdkversion < 200900
