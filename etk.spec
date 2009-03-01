@@ -19,6 +19,7 @@ BuildRoot: 	%{_tmppath}/%{name}-buildroot
 BuildRequires:	ecore-devel >= 0.9.9.042
 Buildrequires:	eet-devel
 BuildRequires:	edje-devel >= 0.5.0.042, edje => 0.5.0.042
+Buildrequires:	embryo >= 0.9.9.050, embryo-devel >= 0.9.9.050
 
 %description
 Etk is a toolkit based on the EFL libraries.
