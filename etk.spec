@@ -1,6 +1,7 @@
 %define	name	etk
 %define version 0.1.0.042
-%define release %mkrel 6
+%define svnrel	20090503
+%define release %mkrel 7.%{svnrel}.1
 
 %define major   1
 %define libname %mklibname %{name} %major
@@ -16,10 +17,11 @@ URL: 		http://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 Patch0:		etk-0.1.0.042-fix-linkage.patch
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
-BuildRequires:	ecore-devel >= 0.9.9.042
+BuildRequires:	ecore-devel >= 0.9.9.060
 Buildrequires:	eet-devel
 BuildRequires:	edje-devel >= 0.5.0.042, edje => 0.5.0.042
 Buildrequires:	embryo >= 0.9.9.050, embryo-devel >= 0.9.9.050
+Buildrequires:	gettext-devel
 
 %description
 Etk is a toolkit based on the EFL libraries.
@@ -45,10 +47,11 @@ Provides: %name-devel = %{version}-%{release}
 %{name} development headers and libraries
 
 %prep
-%setup -q
+%setup -qn %name
 %patch0 -p0
 
 %build
+NOCONFIGURE=1 ./autogen.sh
 %configure2_5x
 %make
 
