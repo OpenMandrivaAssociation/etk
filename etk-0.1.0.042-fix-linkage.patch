@@ -1,0 +1,11 @@
+--- src/lib/Makefile.am~	2007-10-31 13:26:54.000000000 +0100
++++ src/lib/Makefile.am	2008-09-20 22:00:55.000000000 +0200
+@@ -173,7 +173,7 @@
+ installed_headersdir = $(prefix)/include/etk
+ installed_headers_DATA = $(ETKHEADERS)
+ 
+-libetk_la_LIBADD  = @EVAS_LIBS@ @ECORE_LIBS@ @EDJE_LIBS@
++libetk_la_LIBADD  = @EVAS_LIBS@ @ECORE_LIBS@ @EDJE_LIBS@ -lm
+ 
+ libetk_la_DEPENDENCIES = 
+ 
