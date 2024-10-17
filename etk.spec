@@ -13,7 +13,7 @@ Version: 	%{version}
 Release: 	%{release}
 License: 	BSD
 Group: 		Graphical desktop/Enlightenment
-URL: 		http://www.enlightenment.org/
+URL: 		https://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 Patch0:		etk-0.1.0.042-fix-linkage.patch
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
