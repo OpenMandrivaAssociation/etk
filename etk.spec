@@ -17,6 +17,11 @@ URL: 		https://www.enlightenment.org/
 Source: 	%{name}-%{version}.tar.bz2
 Patch0:		etk-0.1.0.042-fix-linkage.patch
 BuildRoot: 	%{_tmppath}/%{name}-buildroot
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	ecore-devel >= 0.9.9.060
 Buildrequires:	eet-devel
 BuildRequires:	edje-devel >= 0.5.0.042, edje => 0.5.0.042
